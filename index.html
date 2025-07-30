@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrappreneurs - Von der App-Idee zum erfolgreichen Launch</title>
+    <meta name="description" content="Du hast eine App-Idee aber kein Tech-Know-how? Von der ersten Ideen-Prüfung bis zur fertigen App - ich begleite dich auf jedem Schritt.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #4646FF;
+            --primary-light: #A2A2FF;
+            --secondary-color: #FF4364;
+            --secondary-light: #FFA1B1;
+            --accent-color: #FF8066;
+            --accent-light: #FFBFB2;
+            --text-color: #333333;
+            --text-light: #718096;
+            --background-soft: #f8f9ff;
+            --background-white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #4646FF 0%, #A2A2FF 100%);
+            --gradient-secondary: linear-gradient(135deg, #FF4364 0%, #FFA1B1 100%);
+            --gradient-soft: linear-gradient(135deg, #f8f9ff 0%, #e8ebff 100%);
+            --shadow-soft: 0 10px 25px rgba(70, 70, 255, 0.15);
+            --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background: var(--background-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--background-white);
+            box-shadow: 0 2px 10px rgba(70, 70, 255, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo::before {
+            content: "📱";
+            font-size: 1.5rem;
+        }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(70, 70, 255, 0.25);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-soft);
+            padding: 140px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%234646FF" fill-opacity="0.05"><circle cx="30" cy="30" r="4"/></g></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(0) translateY(0) rotate(0deg); }
+            100% { transform: translateX(-60px) translateY(-60px) rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--text-color);
+            line-height: 1.2;
+        }
+
+        .hero .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .problem-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .problem-intro h2 {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .problem-story {
+            background: var(--background-soft);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+            border-left: 6px solid var(--primary-color);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .problem-quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .problem-author {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* Packages Section */
+        .packages {
+            padding: 100px 0;
+            background: var(--background-soft);
+        }
+
+        .packages-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .packages-header h2 {
+            font-size: 2.8rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .packages-header p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .package-card.featured {
+            transform: scale(1.05);
+            border: 3px solid var(--primary-color);
+        }
+
+        .package-card.featured::before {
+            content: 'Beliebteste Wahl! 🚀';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .package-header {
+            padding: 40px 30px 30px;
+            text-align: center;
+        }
+
+        .package-badge {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .package-card.featured .package-badge {
+            background: var(--primary-color);
+        }
+
+        .package-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .package-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        .package-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .package-duration {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .package-content {
+            padding: 0 30px 40px;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .package-features li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1rem;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        .package-features li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            font-size: 1.1rem;
+        }
+
+        .package-cta {
+            background: var(--background-soft);
+            color: var(--primary-color);
+            padding: 15px 30px;
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .package-cta:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .package-card.featured .package-cta {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+        }
+
+        .package-card.featured .package-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(70, 70, 255, 0.3);
+        }
+
+        /* Journey Section */
+        .journey {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .journey-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .journey-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .journey-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .journey-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .journey-step {
+            background: var(--background-soft);
+            padding: 30px 25px;
+            border-radius: 20px;
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .journey-step .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 15px;
+            font-size: 1.2rem;
+        }
+
+        .journey-step h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .journey-step p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .journey-arrow {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: var(--background-soft);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-avatar {
+            width: 180px;
+            height: 180px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: white;
+            box-shadow: var(--shadow-soft);
+            margin: 0 auto;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .about-stat {
+            text-align: center;
+        }
+
+        .about-stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .about-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background: var(--background-soft);
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .testimonial-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 100px 0;
+            background: var(--background-soft);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .faq-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: var(--shadow-card);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: var(--background-soft);
+        }
+
+        .faq-answer {
+            padding: 0 30px 25px;
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><circle cx="30" cy="30" r="4"/></g></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-white {
+            background: white;
+            color: var(--primary-color);
+            padding: 20px 40px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-color);
+            color: #a0aec0;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+        }
+
+        .footer .heart {
+            color: var(--primary-color);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-stats {
+                justify-content: center;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-flow {
+                flex-direction: column;
+            }
+
+            .journey-arrow {
+                transform: rotate(90deg);
+            }
+
+            .package-card.featured {
+                transform: none;
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">entrappreneurs</a>
+            <a href="#packages" class="cta-button">💕 Newsletter ansehen</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Für App-Gründer:innen ohne Tech-Hintergrund</div>
+                <h1>Von der <span class="highlight">App-Idee zum erfolgreichen Launch</span></h1>
+                <div class="subtitle">
+                    Du hast eine App-Idee, aber kein Tech-Know-how? Ich begleite dich auf jedem Schritt - 
+                    von der ersten Ideen-Prüfung bis zur fertigen App.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-intro">
+                <h2>Kennst du das auch?</h2>
+            </div>
+
+            <div class="problem-story">
+                <div class="problem-quote">
+                    "Ich habe eine coole App-Idee und einen Business-Plan. Aber ich finde keinen Tech-Co-Founder 
+                    und große Agenturen sind zu teuer. Wo soll ich anfangen?"
+                </div>
+                <div class="problem-author">— So geht es den meisten App-Gründer:innen</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-intro">
+                <h2>Hier setzt Entrappreneurs an</h2>
+            </div>
+
+            <div class="problem-story">
+                <div class="problem-quote">
+                    "Du brauchst keine eigene Tech-Person im Team. Du brauchst jemanden, der dir die technischen 
+                    Entscheidungen abnimmt und dir ehrlich sagt, was machbar ist und was nicht. Als Tech-Expertin 
+                    begleite ich dich von der ersten Idee bis zur fertigen App - ohne dass du selbst programmieren musst."
+                </div>
+                <div class="problem-author">— Cathleen, deine Tech-Expertin</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages" id="packages">
+        <div class="container">
+            <div class="packages-header">
+                <h2>Welches Angebot passt zu dir?</h2>
+                <p>Als Tech-Expertin begleite ich dich von der ersten Idee bis zur fertigen App</p>
+            </div>
+
+            <div class="packages-grid">
+                <!-- Package 1: App-Check -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-badge">Easy Yes</div>
+                        <h3 class="package-title">App-Check</h3>
+                        <div class="package-subtitle">Ist deine Idee technisch machbar?</div>
+                        <div class="package-price">Kostenlos</div>
+                        <div class="package-duration">30 Min Gespräch</div>
+                    </div>
+                    <div class="package-content">
+                        <ul class="package-features">
+                            <li>Ehrliches Feedback zu deiner App-Idee</li>
+                            <li>Technische Machbarkeit prüfen</li>
+                            <li>Grobe Kostenschätzung</li>
+                            <li>Komplexitäts-Bewertung</li>
+                            <li>Empfehlung für nächste Schritte</li>
+                            <li>Auch "Nein" wenn es nicht funktioniert</li>
+                        </ul>
+                        <a href="mailto:cathleen@herzdigital.de?subject=Kostenloser App-Check&body=Hi Cathleen! Ich hätte gerne einen kostenlosen App-Check. Meine Idee: [hier beschreiben]" class="package-cta">App-Check anfragen</a>
+                    </div>
+                </div>
+
+                <!-- Package 2: Tech-Check (Featured) -->
+                <div class="package-card featured">
+                    <div class="package-header">
+                        <div class="package-badge">Bestseller</div>
+                        <h3 class="package-title">Tech-Check</h3>
+                        <div class="package-subtitle">Komplette technische Bewertung deiner App</div>
+                        <div class="package-price">197€</div>
+                        <div class="package-duration">90 Min Session</div>
+                    </div>
+                    <div class="package-content">
+                        <ul class="package-features">
+                            <li>Detaillierte Tech-Komplexitäts-Analyse</li>
+                            <li>Realistische Kosten- & Zeitschätzung</li>
+                            <li>Tech-Stack Empfehlung</li>
+                            <li>MVP vs. Full App Definition</li>
+                            <li>Entwickler-Briefing Template</li>
+                            <li>Schriftliche Zusammenfassung</li>
+                            <li>2 Wochen E-Mail-Support inklusive</li>
+                        </ul>
+                        <a href="mailto:cathleen@herzdigital.de?subject=Tech-Check Anfrage&body=Hi Cathleen! Ich interessiere mich für den Tech-Check. Meine Idee: [hier beschreiben] Mein Budget: [hier angeben]" class="package-cta">Tech-Check buchen</a>
+                    </div>
+                </div>
+
+                <!-- Package 3: Tech-Strategie -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-badge">Premium</div>
+                        <h3 class="package-title">Tech-Strategie</h3>
+                        <div class="package-subtitle">Komplette technische Roadmap & Umsetzungsplan</div>
+                        <div class="package-price">697€</div>
+                        <div class="package-duration">3 Sessions à 90 Min</div>
+                    </div>
+                    <div class="package-content">
+                        <ul class="package-features">
+                            <li>Session 1: Tech-Architektur & Roadmap</li>
+                            <li>Session 2: MVP-Planung & Feature-Priorisierung</li>
+                            <li>Session 3: Launch-Strategie & Team-Aufbau</li>
+                            <li>Detaillierte Entwickler-Specs</li>
+                            <li>Budget-Planung & Timeline</li>
+                            <li>4 Wochen WhatsApp-Support</li>
+                            <li>Bei Bedarf: Entwicklung mit herzdigital</li>
+                        </ul>
+                        <a href="mailto:cathleen@herzdigital.de?subject=Tech-Strategie Anfrage&body=Hi Cathleen! Ich interessiere mich für die Tech-Strategie. Meine Idee: [hier beschreiben] Mein aktueller Stand: [hier beschreiben]" class="package-cta">Tech-Strategie anfragen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey -->
+    <section class="journey">
+        <div class="container">
+            <div class="journey-header">
+                <h2>So läuft deine App-Journey</h2>
+                <p>Vom ersten Newsletter bis zur fertigen App - so begleite ich dich</p>
+            </div>
+
+            <div class="journey-flow">
+                <div class="journey-step">
+                    <div class="step-number">1</div>
+                    <h3>App-Check</h3>
+                    <p>Kostenlose Einschätzung: Ist deine Idee technisch machbar? 30 Min.</p>
+                </div>
+
+                <div class="journey-arrow">→</div>
+
+                <div class="journey-step">
+                    <div class="step-number">2</div>
+                    <h3>Tech-Check</h3>
+                    <p>Detaillierte technische Bewertung & Kostenschätzung. 197€.</p>
+                </div>
+
+                <div class="journey-arrow">→</div>
+
+                <div class="journey-step">
+                    <div class="step-number">3</div>
+                    <h3>Tech-Strategie</h3>
+                    <p>Komplette Roadmap & Umsetzungsplan. Ready für Entwicklung. 697€.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-avatar">👩‍💻</div>
+                <div class="about-text">
+                    <h3>Hi, ich bin Cathleen!</h3>
+                    <p>
+                        Seit über 10 Jahren helfe ich Menschen dabei, ihre App-Träume wahr werden zu lassen. 
+                        Über meine Agentur herzdigital habe ich mehr als 50 Apps von der Idee bis zum Launch begleitet.
+                    </p>
+                    <p>
+                        Als Programmiererin und Startup-Gründerin kenne ich deine Herausforderungen. Mit meinem 
+                        Entrappreneurs Newsletter teile ich meine Erfahrungen - ehrlich und ohne Marketing-Blabla.
+                    </p>
+                

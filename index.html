@@ -1,10 +1,15 @@
-<!DOCTYPE html>
+        .services-header h2 {
+            font-size: 2.8rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }        /* Services Section */<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrappreneurs - Von der App-Idee zum erfolgreichen Launch</title>
-    <meta name="description" content="Du hast eine App-Idee aber kein Tech-Know-how? Von der ersten Ideen-Prüfung bis zur fertigen App - ich begleite dich auf jedem Schritt.">
+    <title>Entrappreneurs - Die App Startup Platform</title>
+    <meta name="description" content="Die Platform für App-Gründer. Community, Beratung, Netzwerk und Kurse - von App-Gründern für App-Gründer.">
     <style>
         * {
             margin: 0;
@@ -67,30 +72,22 @@
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .logo::before {
-            content: "📱";
-            font-size: 1.5rem;
-        }
-
-        .cta-button {
+        .nav-cta {
             background: var(--gradient-primary);
             color: white;
-            padding: 12px 25px;
-            border: none;
+            padding: 12px 24px;
             border-radius: 25px;
-            font-weight: 600;
             text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-soft);
         }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
+        
+        .nav-cta:hover {
+            transform: translateY(-1px);
             box-shadow: 0 15px 35px rgba(70, 70, 255, 0.25);
         }
 
@@ -126,10 +123,9 @@
 
         .hero-badge {
             display: inline-block;
-            background: var(--primary-color);
-            color: white;
+            color: var(--primary-color);
+            font-color: white;
             padding: 10px 25px;
-            border-radius: 25px;
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 25px;
@@ -159,290 +155,370 @@
             line-height: 1.6;
         }
 
+        .hero-cta {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(70, 70, 255, 0.3);
+        }
+
+        .hero-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            opacity: 0.8;
+        }
+
         /* Problem Section */
         .problem {
-            padding: 80px 0;
+            padding: 100px 0;
             background: white;
         }
 
-        .problem-intro {
+        .problem-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
-        .problem-intro h2 {
-            font-size: 2.5rem;
-            color: var(--text-color);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .problem-story {
-            background: var(--background-soft);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            margin: 40px 0;
-            border-left: 6px solid var(--primary-color);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .problem-quote {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--text-color);
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .problem-author {
-            font-size: 1rem;
-            color: var(--text-light);
-            font-weight: 600;
-        }
-
-        /* Packages Section */
-        .packages {
-            padding: 100px 0;
-            background: var(--background-soft);
-        }
-
-        .packages-header {
-            text-align: center;
-            margin-bottom: 70px;
-        }
-
-        .packages-header h2 {
+        .problem-header h2 {
             font-size: 2.8rem;
             color: var(--text-color);
             margin-bottom: 20px;
             font-weight: 600;
         }
 
-        .packages-header p {
-            font-size: 1.3rem;
+        .problem-header p {
+            font-size: 1.2rem;
             color: var(--text-light);
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .packages-grid {
+        .comparison {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
-            margin-top: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .package-card {
-            background: white;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: var(--shadow-card);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .package-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .package-card.featured {
-            transform: scale(1.05);
-            border: 3px solid var(--primary-color);
-        }
-
-        .package-card.featured::before {
-            content: 'Beliebteste Wahl! 🚀';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary-color);
-            color: white;
-            padding: 8px 25px;
+        .comparison-card {
+            padding: 40px;
             border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .package-header {
-            padding: 40px 30px 30px;
             text-align: center;
         }
 
-        .package-badge {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: white;
-            padding: 6px 15px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
+        .comparison-card.agency {
+            background: #fff5f5;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .comparison-card.cto {
+            background: var(--background-soft);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .comparison-card h3 {
+            font-size: 1.5rem;
             margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .package-card.featured .package-badge {
-            background: var(--primary-color);
-        }
-
-        .package-title {
-            font-size: 1.8rem;
             font-weight: 600;
-            margin-bottom: 15px;
+        }
+
+        .comparison-card.agency h3 {
+            color: var(--secondary-color);
+        }
+
+        .comparison-card.cto h3 {
+            color: var(--primary-color);
+        }
+
+        .comparison-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .comparison-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
             color: var(--text-color);
         }
 
-        .package-subtitle {
-            font-size: 1rem;
-            color: var(--text-light);
-            margin-bottom: 25px;
+        .comparison-card.agency .comparison-list li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
         }
 
-        .package-price {
-            font-size: 3rem;
+        .comparison-card.cto .comparison-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        /* Platform */
+        .platform {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .platform-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .platform-header h2 {
+            font-size: 2.8rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .platform-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .platform-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            border-left: 5px solid var(--primary-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .platform-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .platform-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .platform-card.coming-soon {
+            opacity: 0.7;
+            position: relative;
+        }
+
+        .platform-card.coming-soon::after {
+            content: 'Coming Soon';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Image Sections */
+        .image-section {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .image-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .services {
+            padding: 100px 0;
+            background: var(--background-soft);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .services-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .service-card.featured {
+            border-color: var(--primary-color);
+            position: relative;
+        }
+
+        .service-card.featured::before {
+            content: '';
+            display: none;
+        }
+
+        .service-price {
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 10px;
         }
 
-        .package-duration {
-            font-size: 0.9rem;
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .service-description {
             color: var(--text-light);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            line-height: 1.6;
         }
 
-        .package-content {
-            padding: 0 30px 40px;
-        }
-
-        .package-features {
+        .service-features {
             list-style: none;
             margin-bottom: 30px;
+            text-align: left;
         }
 
-        .package-features li {
-            padding: 10px 0;
-            padding-left: 30px;
+        .service-features li {
+            padding: 8px 0;
+            padding-left: 25px;
             position: relative;
-            font-size: 1rem;
             color: var(--text-color);
-            line-height: 1.5;
         }
 
-        .package-features li::before {
-            content: "✨";
+        .service-features li::before {
+            content: "✓";
             position: absolute;
             left: 0;
-            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: bold;
         }
 
-        .package-cta {
-            background: var(--background-soft);
-            color: var(--primary-color);
+        .service-cta {
+            background: var(--gradient-primary);
+            color: white;
             padding: 15px 30px;
-            border: 2px solid var(--primary-color);
             border-radius: 25px;
             font-weight: 600;
             text-decoration: none;
-            display: block;
-            text-align: center;
             transition: all 0.3s ease;
+            display: inline-block;
         }
 
-        .package-cta:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .package-card.featured .package-cta {
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-        }
-
-        .package-card.featured .package-cta:hover {
+        .service-cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(70, 70, 255, 0.3);
         }
 
-        /* Journey Section */
-        .journey {
+        .service-cta.secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .service-cta.secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
             padding: 100px 0;
             background: white;
         }
 
-        .journey-header {
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
             text-align: center;
-            margin-bottom: 60px;
         }
 
-        .journey-header h2 {
+        .newsletter h2 {
             font-size: 2.5rem;
             color: var(--text-color);
             margin-bottom: 20px;
-        }
-
-        .journey-header p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-        }
-
-        .journey-flow {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .journey-step {
-            background: var(--background-soft);
-            padding: 30px 25px;
-            border-radius: 20px;
-            text-align: center;
-            flex: 1;
-            min-width: 200px;
-            position: relative;
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .journey-step .step-number {
-            background: var(--primary-color);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin: 0 auto 15px;
-            font-size: 1.2rem;
-        }
-
-        .journey-step h3 {
-            font-size: 1.2rem;
-            color: var(--text-color);
-            margin-bottom: 10px;
             font-weight: 600;
         }
 
-        .journey-step p {
-            font-size: 0.9rem;
+        .newsletter p {
+            font-size: 1.2rem;
             color: var(--text-light);
+            margin-bottom: 40px;
         }
 
-        .journey-arrow {
-            font-size: 1.5rem;
-            color: var(--primary-color);
+        .community-cta {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            display: inline-block;
+        }
+
+        .community-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(70, 70, 255, 0.3);
         }
 
         /* About Section */
@@ -472,6 +548,15 @@
             color: white;
             box-shadow: var(--shadow-soft);
             margin: 0 auto;
+            font-weight: 700;
+            overflow: hidden;
+        }
+
+        .about-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         .about-text h3 {
@@ -488,32 +573,10 @@
             margin-bottom: 15px;
         }
 
-        .about-stats {
-            display: flex;
-            gap: 30px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .about-stat {
-            text-align: center;
-        }
-
-        .about-stat-number {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .about-stat-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
         /* Testimonials */
         .testimonials {
             padding: 100px 0;
-            background: white;
+            background: #f8f9fa;
         }
 
         .testimonials-header {
@@ -525,118 +588,78 @@
             font-size: 2.5rem;
             color: var(--text-color);
             margin-bottom: 20px;
+            font-weight: 600;
         }
 
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            gap: 30px;
         }
 
         .testimonial-card {
-            background: var(--background-soft);
-            padding: 40px;
+            background: white;
+            padding: 35px;
             border-radius: 20px;
-            position: relative;
             border-left: 5px solid var(--primary-color);
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 4rem;
-            color: var(--primary-color);
-            font-weight: bold;
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .testimonial-text {
-            font-size: 1.1rem;
-            color: var(--text-color);
-            line-height: 1.6;
-            margin-bottom: 25px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
+        .testimonial-header {
             display: flex;
             align-items: center;
             gap: 15px;
+            margin-bottom: 20px;
         }
 
         .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
+            overflow: hidden;
+            background: var(--gradient-primary);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: bold;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
-        .testimonial-info h4 {
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-info {
+            flex: 1;
+        }
+
+        .testimonial-quote {
             font-size: 1.1rem;
             color: var(--text-color);
-            font-weight: 600;
+            line-height: 1.6;
+            font-style: italic;
         }
 
-        .testimonial-info p {
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        .testimonial-company {
             font-size: 0.9rem;
             color: var(--text-light);
-        }
-
-        /* FAQ */
-        .faq {
-            padding: 100px 0;
-            background: var(--background-soft);
-        }
-
-        .faq-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .faq-header h2 {
-            font-size: 2.5rem;
-            color: var(--text-color);
-            margin-bottom: 20px;
-        }
-
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: white;
-            margin-bottom: 15px;
-            border-radius: 15px;
-            overflow: hidden;
-            border-left: 5px solid var(--primary-color);
-            box-shadow: var(--shadow-card);
-        }
-
-        .faq-question {
-            padding: 25px 30px;
-            font-weight: 600;
-            color: var(--text-color);
-            font-size: 1.1rem;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .faq-question:hover {
-            background: var(--background-soft);
-        }
-
-        .faq-answer {
-            padding: 0 30px 25px;
-            color: var(--text-light);
-            line-height: 1.6;
-            font-size: 1rem;
         }
 
         /* Final CTA */
@@ -690,6 +713,8 @@
             font-size: 1.2rem;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: inline-block;
+            margin: 0 10px 10px 0;
         }
 
         .cta-white:hover {
@@ -709,14 +734,13 @@
             font-size: 0.9rem;
         }
 
-        .footer .heart {
-            color: var(--primary-color);
-            animation: pulse 2s infinite;
+        .footer a {
+            color: var(--primary-light);
+            text-decoration: none;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+        .footer a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive */
@@ -725,7 +749,7 @@
                 font-size: 2.5rem;
             }
 
-            .packages-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -734,25 +758,12 @@
                 text-align: center;
             }
 
-            .about-stats {
-                justify-content: center;
-            }
-
-            .testimonials-grid {
+            .platform-grid {
                 grid-template-columns: 1fr;
             }
 
-            .journey-flow {
-                flex-direction: column;
-            }
-
-            .journey-arrow {
-                transform: rotate(90deg);
-            }
-
-            .package-card.featured {
-                transform: none;
-                margin-top: 30px;
+            .comparison {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -762,7 +773,7 @@
     <header class="header">
         <nav class="nav-container">
             <a href="#" class="logo">entrappreneurs</a>
-            <a href="#packages" class="cta-button">💕 Newsletter ansehen</a>
+            <a href="https://calendly.com/entrappreneurs/erstberatung" class="nav-cta">Kostenfreie Erstberatung buchen</a>
         </nav>
     </header>
 
@@ -770,161 +781,178 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">Für App-Gründer:innen ohne Tech-Hintergrund</div>
-                <h1>Von der <span class="highlight">App-Idee zum erfolgreichen Launch</span></h1>
+                <div class="hero-badge">Tech-Beratung für App Startups</div>          
+                      <h1>Von der <span class="highlight">Idee</span> zum erfolgreichen <span class="highlight">App Launch</span></h1>
                 <div class="subtitle">
-                    Du hast eine App-Idee, aber kein Tech-Know-how? Ich begleite dich auf jedem Schritt - 
-                    von der ersten Ideen-Prüfung bis zur fertigen App.
+                   Tech-Beratung für dein App Startup - inklusive Community.
                 </div>
+                <a href="https://calendly.com/entrappreneurs/erstberatung" class="hero-cta">
+                    Kostenfreie Erstberatung buchen
+                </a>
+                <div class="hero-note">30 Min Call, kostenfrei, unverbindlich</div>
             </div>
         </div>
     </section>
 
-    <!-- Problem -->
+    <!-- Problem Section -->
     <section class="problem">
         <div class="container">
-            <div class="problem-intro">
-                <h2>Kennst du das auch?</h2>
+            <div class="problem-header">
+                <h2>Kennst du das Gefühl?</h2>
+                <p>Du hast eine geniale App-Idee, aber weißt nicht wo du anfangen sollst</p>
             </div>
 
-            <div class="problem-story">
-                <div class="problem-quote">
-                    "Ich habe eine coole App-Idee und einen Business-Plan. Aber ich finde keinen Tech-Co-Founder 
-                    und große Agenturen sind zu teuer. Wo soll ich anfangen?"
-                </div>
-                <div class="problem-author">— So geht es den meisten App-Gründer:innen</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution -->
-    <section class="problem">
-        <div class="container">
-            <div class="problem-intro">
-                <h2>Hier setzt Entrappreneurs an</h2>
-            </div>
-
-            <div class="problem-story">
-                <div class="problem-quote">
-                    "Du brauchst keine eigene Tech-Person im Team. Du brauchst jemanden, der dir die technischen 
-                    Entscheidungen abnimmt und dir ehrlich sagt, was machbar ist und was nicht. Als Tech-Expertin 
-                    begleite ich dich von der ersten Idee bis zur fertigen App - ohne dass du selbst programmieren musst."
-                </div>
-                <div class="problem-author">— Cathleen, deine Tech-Expertin</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Packages Section -->
-    <section class="packages" id="packages">
-        <div class="container">
-            <div class="packages-header">
-                <h2>Welches Angebot passt zu dir?</h2>
-                <p>Als Tech-Expertin begleite ich dich von der ersten Idee bis zur fertigen App</p>
-            </div>
-
-            <div class="packages-grid">
-                <!-- Package 1: App-Check -->
-                <div class="package-card">
-                    <div class="package-header">
-                        <div class="package-badge">Easy Yes</div>
-                        <h3 class="package-title">App-Check</h3>
-                        <div class="package-subtitle">Ist deine Idee technisch machbar?</div>
-                        <div class="package-price">Kostenlos</div>
-                        <div class="package-duration">30 Min Gespräch</div>
-                    </div>
-                    <div class="package-content">
-                        <ul class="package-features">
-                            <li>Ehrliches Feedback zu deiner App-Idee</li>
-                            <li>Technische Machbarkeit prüfen</li>
-                            <li>Grobe Kostenschätzung</li>
-                            <li>Komplexitäts-Bewertung</li>
-                            <li>Empfehlung für nächste Schritte</li>
-                            <li>Auch "Nein" wenn es nicht funktioniert</li>
-                        </ul>
-                        <a href="mailto:cathleen@herzdigital.de?subject=Kostenloser App-Check&body=Hi Cathleen! Ich hätte gerne einen kostenlosen App-Check. Meine Idee: [hier beschreiben]" class="package-cta">App-Check anfragen</a>
-                    </div>
+            <div class="comparison">
+                <div class="comparison-card agency">
+                    <h3>Deine Situation</h3>
+                    <ul class="comparison-list">
+                        <li>Du findest keinen Tech-Co-Founder</li>
+                        <li>Agenturen kosten 50.000€+</li>
+                        <li>Du verstehst die Tech-Welt nicht</li>
+                        <li>Dir fehlt der Austausch mit Gleichgesinnten</li>
+                        <li>Du kommst nicht weiter</li>
+                    </ul>
                 </div>
 
-                <!-- Package 2: Tech-Check (Featured) -->
-                <div class="package-card featured">
-                    <div class="package-header">
-                        <div class="package-badge">Bestseller</div>
-                        <h3 class="package-title">Tech-Check</h3>
-                        <div class="package-subtitle">Komplette technische Bewertung deiner App</div>
-                        <div class="package-price">197€</div>
-                        <div class="package-duration">90 Min Session</div>
-                    </div>
-                    <div class="package-content">
-                        <ul class="package-features">
-                            <li>Detaillierte Tech-Komplexitäts-Analyse</li>
-                            <li>Realistische Kosten- & Zeitschätzung</li>
-                            <li>Tech-Stack Empfehlung</li>
-                            <li>MVP vs. Full App Definition</li>
-                            <li>Entwickler-Briefing Template</li>
-                            <li>Schriftliche Zusammenfassung</li>
-                            <li>2 Wochen E-Mail-Support inklusive</li>
-                        </ul>
-                        <a href="mailto:cathleen@herzdigital.de?subject=Tech-Check Anfrage&body=Hi Cathleen! Ich interessiere mich für den Tech-Check. Meine Idee: [hier beschreiben] Mein Budget: [hier angeben]" class="package-cta">Tech-Check buchen</a>
-                    </div>
-                </div>
-
-                <!-- Package 3: Tech-Strategie -->
-                <div class="package-card">
-                    <div class="package-header">
-                        <div class="package-badge">Premium</div>
-                        <h3 class="package-title">Tech-Strategie</h3>
-                        <div class="package-subtitle">Komplette technische Roadmap & Umsetzungsplan</div>
-                        <div class="package-price">697€</div>
-                        <div class="package-duration">3 Sessions à 90 Min</div>
-                    </div>
-                    <div class="package-content">
-                        <ul class="package-features">
-                            <li>Session 1: Tech-Architektur & Roadmap</li>
-                            <li>Session 2: MVP-Planung & Feature-Priorisierung</li>
-                            <li>Session 3: Launch-Strategie & Team-Aufbau</li>
-                            <li>Detaillierte Entwickler-Specs</li>
-                            <li>Budget-Planung & Timeline</li>
-                            <li>4 Wochen WhatsApp-Support</li>
-                            <li>Bei Bedarf: Entwicklung mit herzdigital</li>
-                        </ul>
-                        <a href="mailto:cathleen@herzdigital.de?subject=Tech-Strategie Anfrage&body=Hi Cathleen! Ich interessiere mich für die Tech-Strategie. Meine Idee: [hier beschreiben] Mein aktueller Stand: [hier beschreiben]" class="package-cta">Tech-Strategie anfragen</a>
-                    </div>
+                <div class="comparison-card cto">
+                    <h3>Was du brauchst</h3>
+                    <ul class="comparison-list"> 
+                        <li>Tech-Begleitung on Demand</li>
+                        <li>Kostengünstige App-Entwicklung </li>
+                        <li>Tech-Expertise - einfach erklärt</li>
+                        <li>Sparring und Austausch mit Expert:innen</li>
+                        <li>Einen klare Strategie</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Journey -->
-    <section class="journey">
+    <!-- Platform -->
+    <section class="platform">
         <div class="container">
-            <div class="journey-header">
-                <h2>So läuft deine App-Journey</h2>
-                <p>Vom ersten Newsletter bis zur fertigen App - so begleite ich dich</p>
+            <div class="platform-header">
+                <h2>Dein Weg zur App</h2>
+                <p>Beratung, Wissen und Austausch rund um App Startup Gründung.</p>
             </div>
 
-            <div class="journey-flow">
-                <div class="journey-step">
-                    <div class="step-number">1</div>
-                    <h3>App-Check</h3>
-                    <p>Kostenlose Einschätzung: Ist deine Idee technisch machbar? 30 Min.</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <h3>Tech-Beratung</h3>
+                    <p>Von der Idee bis zum App Launch. Strategie, Tech-Architektur, MVP-Konzept und Team-Building mit Tech-Expertise.</p>
+                </div>
+                <div class="platform-card">
+                    <h3>Community</h3>
+                    <p>Vernetze dich mit anderen App-Gründer:innen und tausche Erfahrungen und Wissen aus.</p>
                 </div>
 
-                <div class="journey-arrow">→</div>
-
-                <div class="journey-step">
-                    <div class="step-number">2</div>
-                    <h3>Tech-Check</h3>
-                    <p>Detaillierte technische Bewertung & Kostenschätzung. 197€.</p>
+                <div class="platform-card">
+                    <h3>Online Kurse</h3>
+                    <p>Schritt-für-Schritt Anleitungen von der App-Idee bis zum Launch. Praxisnah und sofort umsetzbar.</p>
                 </div>
 
-                <div class="journey-arrow">→</div>
-
-                <div class="journey-step">
-                    <div class="step-number">3</div>
-                    <h3>Tech-Strategie</h3>
-                    <p>Komplette Roadmap & Umsetzungsplan. Ready für Entwicklung. 697€.</p>
+                <div class="platform-card">
+                    <h3>Q&A Sessions</h3>
+                    <p>in regelmäßigen Calls beantworte ich dir und der Community all deine Fragen rund um deine App.</p>
                 </div>
+                    <div class="platform-card">
+                    <h3>Netzwerk</h3>
+                    <p>Wertvolle Kontakte zu Agenturen und Dienstleister:innen um deine App zu entwickeln.</p>
+                </div>
+
+
+                    <div class="platform-card">
+                                 <h3>App-Entwicklung</h3>
+                    <p>Mit meiner Agentur herzdigital unterstütze ich dich bei der kompletten Umsetzung deiner App.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Section 1 -->
+    <div class="image-section" style="background-image: url('https://www.herzdigital.de/wp-content/uploads/DSC4301-scaled.jpg');"></div>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <div class="services-header">
+                <h2>Deine Optionen</h2>
+            </div>
+            
+            <div class="services-content">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-price">Kostenlos</div>
+                        <h3 class="service-title">Erstberatung</h3>
+                        <p class="service-description">30 Minuten kennenlernen und schauen, ob wir zusammenpassen</p>
+                        
+                        <ul class="service-features">
+                            <li>Unverbindliches Kennenlernen</li>
+                            <li>Erste Einschätzung deiner Idee</li>
+                            <li>Größten Hebel finden</li>
+                        </ul>
+                        
+                        <a href="https://calendly.com/entrappreneurs/erstberatung" class="service-cta secondary">
+                            Erstberatung buchen
+                        </a>
+                    </div>
+
+                    <div class="service-card featured">
+                        <div class="service-price">99€</div>
+                               <p class="service-description">Preis netto, zzgl. 19% MwSt.</p>
+                        <h3 class="service-title">App-Check</h3>
+                        <p class="service-description">60 Minuten intensive Analyse deiner App-Idee mit konkreter Roadmap</p>
+                        
+                        <ul class="service-features">
+                            <li>Kostenschätzung für deine App</li>
+                            <li>Technische Machbarkeitsanalyse</li>
+                            <li>Strategie & Roadmap</li>
+                            <li>Next Steps & Empfehlungen</li>
+                        </ul>
+                        
+                        <a href="mailto:cathleen@entrappreneurs.de?subject=App-Check&body=Hi Cathleen! Ich interessiere mich für dein App-Check Angebot." class="service-cta secondary">
+                            App-Check anfragen
+                        </a>
+
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-price">499€/Monat</div>
+                               <p class="service-description">Preis netto, zzgl. 19% MwSt.</p>
+                        <h3 class="service-title">CTO-auf-Zeit</h3>
+                        <p class="service-description">Ich begleite dein App-Startup als beratende CTO - flexibel und on Demand - monatlich kündbar</p>
+                        
+                        <ul class="service-features">
+                            <li>3 x 60 Min Calls pro Monat</li>
+                            <li>App-Strategie & Tech-Architektur</li>
+                            <li>MVP-Konzept entwickeln</li>
+                            <li>Team finden oder bereitstellen</li>
+                            <li>Monatlich kündbar</li>
+                        </ul>
+                        
+                        <a href="mailto:cathleen@entrappreneurs.de?subject=CTO-auf-Zeit&body=Hi Cathleen! Ich interessiere mich für dein CTO-auf-Zeit Angebot. Meine App-Idee: [hier beschreiben]" class="service-cta">
+                            Unterstützung anfragen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Section 2 -->
+    <div class="image-section" style="background-image: url('https://www.herzdigital.de/wp-content/uploads/DSC4891-1-scaled.jpg');"></div>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Werde Teil der Entrappreneurs Community</h2>
+                <p>Austausch, Kurse, Webinare, Q&A Sessions, Events und Stories aus dem App Startup Universum.</p>            
+                
+                <a href="https://nas.io/entrappreneurs" class="community-cta">
+                    Community beitreten
+                </a>
             </div>
         </div>
     </section>
@@ -933,15 +961,258 @@
     <section class="about">
         <div class="container">
             <div class="about-content">
-                <div class="about-avatar">👩‍💻</div>
+                <div class="about-avatar">
+                    <img src="https://www.herzdigital.de/wp-content/uploads/elementor/thumbs/cathleen-scharfe-ceo-founder-p2594km8m2nd0u9a70j3f1f1foecubcxbkke0xdzus.jpg" alt="Cathleen - Gründerin von Entrappreneurs" />
+                </div>
                 <div class="about-text">
                     <h3>Hi, ich bin Cathleen!</h3>
                     <p>
-                        Seit über 10 Jahren helfe ich Menschen dabei, ihre App-Träume wahr werden zu lassen. 
-                        Über meine Agentur herzdigital habe ich mehr als 50 Apps von der Idee bis zum Launch begleitet.
+                        Seit über 10 Jahren entwickle ich Apps und begleite Startups, KMU und Gründer:innen. 
+                        Als Programmierein, Designerin, Projektmanagerin, CTO und Tech-Beraterin bis hin zu meiner Agentur herzdigital.
                     </p>
                     <p>
-                        Als Programmiererin und Startup-Gründerin kenne ich deine Herausforderungen. Mit meinem 
-                        Entrappreneurs Newsletter teile ich meine Erfahrungen - ehrlich und ohne Marketing-Blabla.
+                        <strong>Warum Entrappreneurs?</strong> App Startups haben oft besondere Needs: Tech-Knowhow, Austausch und Empowerment. Mit Entrappreneurs möchte ich eine Platform schaffen, die Gründer:innen hilft ihren Weg zu gehen und wertvolle Apps zu erschaffen, die das Potential haben die Welt zu verändern. 
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2>Das sagen andere App-Gründer:innen</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div style="background: var(--gradient-secondary); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; font-size: 1.2rem;">J</div>
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-author">Jonka Netzeband</div>
+                            <div class="testimonial-company">CEO & Founder Lingo Lab</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "Durch die intensive Betreuung von Cathleen ist unsere Idee von digitaler Sprachtherapie Wirklichkeit geworden. Sie hat uns von Anfang an mit ihrem technischen Wissen begleitet."
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div style="background: linear-gradient(135deg, #FF8066 0%, #FFBFB2 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; font-size: 1.2rem;">A</div>
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-author">Anniko Rösch-Lehmann</div>
+                            <div class="testimonial-company">Gründerin Traudl</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "Cathleen hat unser sehr strukturiert und zielführend beraten. Ihr Vorgehen hat mir geholfen, all meine Ideen im Kopf an die richtige Stelle zu rücken und Klarheit zu gewinnen."
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div style="background: var(--gradient-primary); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; font-size: 1.2rem;">M</div>
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-author">Maxi Mittag</div>
+                            <div class="testimonial-company">Gründerin Mentalressourcen</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "Was mir besonders gefallen hat, ist Cathleens strukturierte Herangehensweise und wie sie es schafft die Komplexität von App Entwicklung doch so 'einfach' und verständlich rüberzubringen."
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div style="background: var(--gradient-secondary); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; font-size: 1.2rem;">M</div>
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-author">Max Mintchev</div>
+                            <div class="testimonial-company">Gründer & CTO Mindslam</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "Mit dem Zugang zur Community habe ich endlich den Austausch mit anderen Startups, den ich mir schon lange gewünscht hatte."
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div style="background: linear-gradient(135deg, #FF8066 0%, #FFBFB2 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; font-size: 1.2rem;">S</div>
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-author">Stefan Urbansky</div>
+                            <div class="testimonial-company">CEO HxCode</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote">
+                        "Cathleen hat mich und mein Team bei der Entwicklung einer App begleitet und esgeschafft, dass unsere App noch schneller Live gegangen."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>Bereit für deinen App-Start?</h2>
+                <p>
+                    Buche eine kostenfreie Erstberatung mit mir und bring deine App ein Stück weiter zum Launch.
+                </p>
+                <a href="https://calendly.com/entrappreneurs/erstberatung" class="cta-white">
+                    Kostenfreie Erstberatung buchen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Entrappreneurs - Tech-Beratung für App-Startups</p>
+            <p>Du willst deine App komplett entwickeln lassen? Schau mal bei uns vorbei unter <a href="https://herzdigital.de">herzdigital.de</a></p>
+            
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #4a5568; display: flex; justify-content: center; gap: 30px; font-size: 0.9rem;">
+                <a href="#impressum" style="color: var(--primary-light); text-decoration: none;">Impressum</a>
+                <a href="#datenschutz" style="color: var(--primary-light); text-decoration: none;">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Impressum Modal (hidden by default) -->
+    <div id="impressum-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 40px; border-radius: 20px; max-width: 700px; max-height: 80vh; overflow-y: auto;">
+            <h2 style="margin-bottom: 20px; color: var(--primary-color);">Impressum</h2>
+            <div style="line-height: 1.6; color: var(--text-color);">
+                <p><strong>herzdigital UG (haftungsbeschränkt)</strong><br>
+                Bayrische Straße 8<br>
+                01069 Dresden</p>
                 
+                <p><strong>Vertreten durch:</strong> Cathleen Scharfe<br>
+                <strong>Amtsgericht:</strong> Dresden<br>
+                <strong>Handelsregisternummer:</strong> HRB 39149<br>
+                <strong>E-Mail:</strong> cathleen@entrappreneurs.de</p>
+
+                <h3 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Haftung für Inhalte</h3>
+                <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+                
+                <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+                <h3 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Haftung für Links</h3>
+                <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+
+                <h3 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Urheberrecht</h3>
+                <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+
+                <h3 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Streitschlichtung</h3>
+                <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color: var(--primary-color);">https://ec.europa.eu/consumers/odr</a>.<br>
+                Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+            </div>
+            <button onclick="closeModal('impressum-modal')" style="margin-top: 20px; background: var(--gradient-primary); color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer;">Schließen</button>
+        </div>
+    </div>
+
+    <!-- Datenschutz Modal (hidden by default) -->
+    <div id="datenschutz-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 40px; border-radius: 20px; max-width: 700px; max-height: 80vh; overflow-y: auto;">
+            <h2 style="margin-bottom: 20px; color: var(--primary-color);">Datenschutzerklärung</h2>
+            <div style="line-height: 1.6; color: var(--text-color); font-size: 0.9rem;">
+                <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--primary-color);">1. Verantwortliche Stelle</h3>
+                <p>Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung (DSGVO), ist:</p>
+                <p>Cathleen Scharfe<br>
+                herzdigital UG (haftungsbeschränkt)<br>
+                Bayrische Straße 8<br>
+                01069 Dresden</p>
+
+                <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--primary-color);">2. Ihre Rechte</h3>
+                <p>Unter den angegebenen Kontaktdaten können Sie jederzeit folgende Rechte ausüben:</p>
+                <ul style="margin-left: 20px;">
+                    <li>Auskunft über Ihre bei uns gespeicherten Daten und deren Verarbeitung</li>
+                    <li>Berichtigung unrichtiger personenbezogener Daten</li>
+                    <li>Löschung Ihrer bei uns gespeicherten Daten</li>
+                    <li>Einschränkung der Datenverarbeitung</li>
+                    <li>Datenübertragbarkeit</li>
+                    <li>Widerspruch gegen die Verarbeitung Ihrer Daten bei uns</li>
+                </ul>
+
+                <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--primary-color);">3. Erfassung allgemeiner Informationen</h3>
+                <p>Wenn Sie auf unsere Website zugreifen, werden automatisch Informationen allgemeiner Natur erfasst. Diese Informationen (Server-Logfiles) beinhalten etwa die Art des Webbrowsers, das verwendete Betriebssystem, den Domainnamen Ihres Internet-Service-Providers, Ihre IP-Adresse und ähnliches.</p>
+
+                <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--primary-color);">4. Cookies</h3>
+                <p>Wie viele andere Webseiten verwenden wir auch so genannte „Cookies". Bei Cookies handelt es sich um kleine Textdateien, die auf Ihrem Endgerät gespeichert werden, wenn Sie unsere Webseite besuchen. Sie können über Ihre Browsereinstellungen einzelne Cookies oder den gesamten Cookie-Bestand löschen.</p>
+
+                <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--primary-color);">5. Kontaktformular</h3>
+                <p>Die von Ihnen eingegebenen Daten werden zum Zweck der individuellen Kommunikation mit Ihnen gespeichert. Hierfür ist die Angabe einer validen E-Mail-Adresse sowie Ihres Namens erforderlich. Daten werden spätestens 6 Monate nach Bearbeitung der Anfrage gelöscht.</p>
+
+                <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--primary-color);">6. Calendly</h3>
+                <p>Wir verwenden Calendly für Terminbuchungen. Dabei werden Ihre Daten direkt an Calendly übertragen. Calendly ist DSGVO-konform und verarbeitet Ihre Daten entsprechend der geltenden Datenschutzbestimmungen.</p>
+
+                <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--primary-color);">7. SSL-Verschlüsselung</h3>
+                <p>Um die Sicherheit Ihrer Daten bei der Übertragung zu schützen, verwenden wir dem aktuellen Stand der Technik entsprechende Verschlüsselungsverfahren (z. B. SSL) über HTTPS.</p>
+
+                <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--primary-color);">8. Änderung der Datenschutzerklärung</h3>
+                <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen.</p>
+
+                <h3 style="margin-top: 20px; margin-bottom: 10px; color: var(--primary-color);">9. Fragen zum Datenschutz</h3>
+                <p>Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an uns:<br>
+                cathleen@entrappreneurs.de</p>
+            </div>
+            <button onclick="closeModal('datenschutz-modal')" style="margin-top: 20px; background: var(--gradient-primary); color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer;">Schließen</button>
+        </div>
+    </div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Add click handlers for impressum and datenschutz
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('a[href="#impressum"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal('impressum-modal');
+            });
+
+            document.querySelector('a[href="#datenschutz"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal('datenschutz-modal');
+            });
+
+            // Close modal when clicking outside
+            document.addEventListener('click', function(e) {
+                if (e.target.id === 'impressum-modal' || e.target.id === 'datenschutz-modal') {
+                    closeModal(e.target.id);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
